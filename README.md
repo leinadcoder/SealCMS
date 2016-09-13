@@ -1,2 +1,6 @@
 # Seal
-Small library for manage web content
+Seal is small library for management web content.
+
+## Server Requirements
+
+PHP version 5.3 or newer.
