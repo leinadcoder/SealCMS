@@ -1,0 +1,9 @@
+{
+    "content": {
+        "{TXT_TITLE}": "P&aacute;gina principal",
+        "{TXT_NAV_1}": "Your menu",
+        "{TXT_ARTICLE}": "Article title",
+        "{TEXT_P1}" : "<b>Donec eu libero</b> sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+        "{TEXT_COPY}" : "Copyright 2009 Your name"
+    }
+}
