@@ -1,6 +1,4 @@
-# Seal
-Seal is small library for management web content.
+# Seal CMS
+Build and think for developers.
 
-## Server Requirements
-
-PHP version 5.3 or newer.
+Seal CMS is a project to build small applications faster and the simple way; made to developers with don't need complex tools to build and administers.
