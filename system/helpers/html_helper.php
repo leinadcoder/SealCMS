@@ -411,3 +411,51 @@ if ( ! function_exists('nbs'))
 		return str_repeat('&nbsp;', $num);
 	}
 }
+
+// ------------------------------------------------------------------------
+
+if ( ! function_exists('custom'))
+{
+    /**
+     * Generates HTML custom tag
+     *
+     * @param  mixed attribute or an array
+     * @param  string
+     * @return string
+     */
+    function custom($tag = '', $attributes = '', $content = '', $complement = '')
+    {
+        $custom = '';
+
+        if ( ! empty($tag))
+        {
+            $custom = '<'.$tag;
+
+            if (is_array($attributes))
+            {
+                foreach($attributes as $k => $v)
+                {
+                    if ( ! empty($v))
+                    {
+                        $custom .= ' '.$k.'="'.$v.'"';
+                    }
+                    else
+                    {
+                        $custom .= ' '.$k;
+                    }
+                }
+
+                $custom .= ">\n";
+            }
+            else
+            {
+                $custom .=  $attributes.">\n";
+            }
+
+            $custom .= ( ! empty($complement)) ? "</".$tag."> ".$complement
+                        : $content."</".$tag.">\n";
+        }
+
+        return $custom;
+    }
+}
