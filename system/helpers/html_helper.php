@@ -363,12 +363,15 @@ if ( ! function_exists('meta'))
 		$str = '';
 		foreach ($name as $meta)
 		{
-			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? 'http-equiv' : 'name';
+			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? $meta['type'] : 'name';
 			$name		= isset($meta['name'])					? $meta['name'] : '';
 			$content	= isset($meta['content'])				? $meta['content'] : '';
 			$newline	= isset($meta['newline'])				? $meta['newline'] : "\n";
 
-			$str .= '<meta '.$type.'="'.$name.'" content="'.$content.'" />'.$newline;
+			// To prevent add empty tag content
+			$content = (empty($content) OR $content === '') ? '' : ' content="' . $content . '"';
+
+			$str .= '<meta '.$type.'="'.$name.'"'.$content.' >'.$newline;
 		}
 
 		return $str;
